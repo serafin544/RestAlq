@@ -1,0 +1,30 @@
+http://tools.perceptus.ca/text-wiz.php?ops=7
+
+https://stackoverflow.com/questions/54853631/java-jpa-how-put-an-object-with-a-list-and-update-the-list-objects-as-well-wit
+
+
+    BasicItem test1 = new BasicItem(1,"test one ", 1.00);
+    BasicItem test2 = new BasicItem(2,"test two ", 2.00);
+    BasicItem test3 = new BasicItem(3,"test three ", 3.00);
+    BasicItem test4 = new BasicItem(4,"test four ", 4.00);
+    BasicItem test5 = new BasicItem(5,"test five ", 5.00);
+    BasicItem test6 = new BasicItem(6,"test six ", 6.00);
+    BasicItem test7 = new BasicItem(7,"test seven ", 7.00);
+    BasicItem test8 = new BasicItem(8,"test eight ", 8.00);
+    BasicItem test9 = new BasicItem(9,"test nine ", 9.00);
+    BasicItem test10 = new BasicItem(10,"test ten ", 10.00);
+
+    ArrayList<BasicItem> AllItems = new ArrayList<BasicItem>(Arrays.asList(test1,test2,test3,test4,test5,test6,test7,test8,test9,test10));
+    ArrayList<BasicItem> tmp = new ArrayList<BasicItem>();
+
+    public BasicItem searchFor(int i){
+        return   AllItems.get(i);
+    }
+
+    public double getTotalPrice(ArrayList<BasicItem> tmp){
+        double total = 0.00;
+        for(int i = 0; i < tmp.size(); i++){
+            total += tmp.get(i).getPrice();
+        }
+        return total;
+    }
