@@ -11,6 +11,9 @@ public class Item {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "POSID")
+    private Pos pos;
     private String name;
     private String flavorType;
     private String Category;

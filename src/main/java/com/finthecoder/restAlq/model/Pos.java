@@ -5,13 +5,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-@Table(name = "Order")
-public class Order {
+@Table(name = "POS")
+public class Pos {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "ORDERID")
-    private Long orderId;
+    @Column(name = "POSID")
+    private Long posId;
 
     @Column(name = "DATE")
     private String Date;
@@ -20,10 +20,11 @@ public class Order {
     private String Name;
 
     @OneToMany(
-            mappedBy = "Item",
+            fetch = FetchType.LAZY,
             cascade = CascadeType.ALL,
             orphanRemoval = true
     )
+
     private List<Item> items = new ArrayList<>();
 
     @Column(name = "TOTALPRICE")
